@@ -9,28 +9,38 @@ import XCTest
 @testable import GBShop
 
 class GBShopTests: XCTestCase {
+    
+    let requestFactory = RequestFactory()
+    
+    let userData = RegistrationData(userId: 123, userName: "Somebody", password: "mypassword", email: "some@some.ru", gender: "m", creditCard: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language")
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testLogin() {
+        let ex = expectation(description: "Expectation of JSON")
+        requestFactory.makeAuthRequestFactory()
+            .login(userName: "Somebody", password: "mypassword") { (response) in
+                switch response.result {
+                case .success(let result):
+                    XCTAssertEqual(result.result, 1)
+                case .failure:
+                    XCTFail()
+                }
+                ex.fulfill()
+            }
+        wait(for: [ex], timeout: 10.0)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testRegistration() {
+        let ex = expectation(description: "Expectation of JSON ")
+            requestFactory.makeRegistrationFactory()
+                .registration(userData: userData) { response in
+                    XCTAssertNil(response.error)
+                    XCTAssertNotNil(response.result)
+                    ex.fulfill()
+                }
+            waitForExpectations(timeout: 10) { (error) in
+                if let error = error {
+                    XCTFail("error: \(error)")
+            }
         }
     }
-
 }
