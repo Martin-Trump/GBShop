@@ -59,4 +59,19 @@ class GBShopTests: XCTestCase {
             }
         }
     }
+    
+    func testAddToBasket() {
+        let ex = expectation(description: "Expecting of 1")
+        requestFactory.makeAddToBasket()
+            .addToBasket(productId: 123, quantity: 1) { response in
+                XCTAssertNil(response.error)
+                XCTAssertNotNil(response.result)
+                ex.fulfill()
+            }
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                XCTFail("error: \(error)")
+            }
+        }
+    }
 }

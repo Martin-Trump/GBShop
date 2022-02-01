@@ -50,6 +50,12 @@
 		52F1AC6127A2B13900739E8B /* ApproveReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC6027A2B13900739E8B /* ApproveReview.swift */; };
 		52F1AC6A27A2B3E900739E8B /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC6927A2B3E900739E8B /* DeleteReview.swift */; };
 		52F1AC6C27A2CB4800739E8B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC6B27A2CB4800739E8B /* Comment.swift */; };
+		52F1AC6F27A975E600739E8B /* AddToBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC6E27A975E600739E8B /* AddToBasketResult.swift */; };
+		52F1AC7427A976C600739E8B /* AddToBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC7327A976C600739E8B /* AddToBasketRequestFactory.swift */; };
+		52F1AC7627A976DD00739E8B /* DeleteFromBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC7527A976DC00739E8B /* DeleteFromBasketRequestFactory.swift */; };
+		52F1AC7827A9775F00739E8B /* AddToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC7727A9775F00739E8B /* AddToBasket.swift */; };
+		52F1AC7A27A979F100739E8B /* DeleteFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC7927A979F100739E8B /* DeleteFromBasket.swift */; };
+		52F1AC7C27A97E4A00739E8B /* DeleteFromBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1AC7B27A97E4A00739E8B /* DeleteFromBasketResult.swift */; };
 		67EE41E87F64848D00BA8B76 /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF1BE4458807F7B30E18098 /* Pods_GBShop_GBShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +125,12 @@
 		52F1AC6027A2B13900739E8B /* ApproveReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveReview.swift; sourceTree = "<group>"; };
 		52F1AC6927A2B3E900739E8B /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		52F1AC6B27A2CB4800739E8B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		52F1AC6E27A975E600739E8B /* AddToBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketResult.swift; sourceTree = "<group>"; };
+		52F1AC7327A976C600739E8B /* AddToBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketRequestFactory.swift; sourceTree = "<group>"; };
+		52F1AC7527A976DC00739E8B /* DeleteFromBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasketRequestFactory.swift; sourceTree = "<group>"; };
+		52F1AC7727A9775F00739E8B /* AddToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasket.swift; sourceTree = "<group>"; };
+		52F1AC7927A979F100739E8B /* DeleteFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasket.swift; sourceTree = "<group>"; };
+		52F1AC7B27A97E4A00739E8B /* DeleteFromBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasketResult.swift; sourceTree = "<group>"; };
 		58E679E496DBF170DF6097E9 /* Pods-GBShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopTests/Pods-GBShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BD2369730E682628177C5B0 /* Pods_GBShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		888BA56B2DB5248ADD0E69B3 /* Pods-GBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop.release.xcconfig"; path = "Target Support Files/Pods-GBShop/Pods-GBShop.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +271,7 @@
 		527F0496278DC4D20016CFBD /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				52F1AC6D27A975D200739E8B /* Basket */,
 				52F1AC6827A2B33B00739E8B /* Review */,
 				52F1AC6727A2B32C00739E8B /* Product */,
 				52F1AC6627A2B32200739E8B /* UserData */,
@@ -302,6 +315,7 @@
 		527F04A7279359E30016CFBD /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				52F1AC7227A9769E00739E8B /* BasketActions */,
 				52F1AC6527A2B2EA00739E8B /* ReviewRequests */,
 				52F1AC6427A2B2C300739E8B /* ProductRequests */,
 				52F1AC6327A2B29B00739E8B /* UserDataActions */,
@@ -387,6 +401,26 @@
 				52F1AC6B27A2CB4800739E8B /* Comment.swift */,
 			);
 			path = Review;
+			sourceTree = "<group>";
+		};
+		52F1AC6D27A975D200739E8B /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				52F1AC6E27A975E600739E8B /* AddToBasketResult.swift */,
+				52F1AC7B27A97E4A00739E8B /* DeleteFromBasketResult.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		52F1AC7227A9769E00739E8B /* BasketActions */ = {
+			isa = PBXGroup;
+			children = (
+				52F1AC7327A976C600739E8B /* AddToBasketRequestFactory.swift */,
+				52F1AC7727A9775F00739E8B /* AddToBasket.swift */,
+				52F1AC7527A976DC00739E8B /* DeleteFromBasketRequestFactory.swift */,
+				52F1AC7927A979F100739E8B /* DeleteFromBasket.swift */,
+			);
+			path = BasketActions;
 			sourceTree = "<group>";
 		};
 		863EF27B5BC1B05E6F30A54F /* Frameworks */ = {
@@ -651,6 +685,7 @@
 				527F049E2792C6310016CFBD /* LoginResult.swift in Sources */,
 				52B0E7132796E4F900C750C3 /* SceneDelegate.swift in Sources */,
 				52F1AC5527A2AAB700739E8B /* AddReviewRequestFactory.swift in Sources */,
+				52F1AC7827A9775F00739E8B /* AddToBasket.swift in Sources */,
 				527F04A22792C8A90016CFBD /* ErrorParser.swift in Sources */,
 				528B45A9279866A800B88AC8 /* ProductsListData.swift in Sources */,
 				52DA64142796225700A21CD9 /* RegistrationRequestFactory.swift in Sources */,
@@ -660,19 +695,24 @@
 				52DA640E27960DDA00A21CD9 /* ChangeUserDataFactory.swift in Sources */,
 				52B0E70F2796C8EE00C750C3 /* Registrate.swift in Sources */,
 				52F1AC5327A2A95800739E8B /* ReviewResult.swift in Sources */,
+				52F1AC7427A976C600739E8B /* AddToBasketRequestFactory.swift in Sources */,
 				52F1AC6A27A2B3E900739E8B /* DeleteReview.swift in Sources */,
 				52F1AC5B27A2ADB900739E8B /* DeleteReviewResult.swift in Sources */,
+				52F1AC7A27A979F100739E8B /* DeleteFromBasket.swift in Sources */,
 				52DA64042795823300A21CD9 /* LogOutResult.swift in Sources */,
 				527F04AB27935A830016CFBD /* Auth.swift in Sources */,
 				52F1AC5927A2ADAB00739E8B /* ApproveReviewResult.swift in Sources */,
 				52F1AC5D27A2AE0200739E8B /* ApproveReviewRequestFactory.swift in Sources */,
 				52F1AC6127A2B13900739E8B /* ApproveReview.swift in Sources */,
 				52F1AC5127A2A94B00739E8B /* Review.swift in Sources */,
+				52F1AC7627A976DD00739E8B /* DeleteFromBasketRequestFactory.swift in Sources */,
 				52B0E7112796E12600C750C3 /* RequestRouter.swift in Sources */,
 				527F04A9279359FA0016CFBD /* AuthRequestFactory.swift in Sources */,
+				52F1AC7C27A97E4A00739E8B /* DeleteFromBasketResult.swift in Sources */,
 				52F1AC5F27A2AE2400739E8B /* DeleteReviewRequestFactory.swift in Sources */,
 				523D3935278D82F200DCDAB2 /* AppDelegate.swift in Sources */,
 				527F04A02792C63C0016CFBD /* User.swift in Sources */,
+				52F1AC6F27A975E600739E8B /* AddToBasketResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
